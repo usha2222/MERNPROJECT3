@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tail.css">
+    <script src="q.js"></script>
+</head>
+
+<body>
+    <div class="text-center w-full h-screen flex  bg-black  bg-cover text-white ">
+        <div
+            class=" border rounded-xl border-gray-600 w-fit p-2 px-8 flex justify-center items-center  flex-col m-auto hover:shadow-2xs hover:shadow-blue-300 ">
+            <h1 class="font-medium text-2xl text-center">Login</h1>
+
+            <input
+                class="p-2 mt-8 ml-1.5 border border-gray-600 font-light rounded-xl w-80 hover:shadow hover:shadow-white "
+                type="text" placeholder="Enter your name" id="uname">
+            </p>
+            <br>
+            <input
+                class="p-2  ml-1.5 my-3 border border-gray-600 font-light rounded-xl  w-80 hover:shadow hover:shadow-white"
+                type="password" placeholder="Enter your password" id="pwd"></p>
+            <br>
+            <p>Login type</p>
+            <div class="flex justify-center my-4 p-2">
+                <!-- <input type="radio" onclick="studentLogin()" value="register">Student
+                <input type="radio" value="register">Admin -->
+                <button
+                    class=" border me-8 w-30 border-gray-500 bg-blue-600 shadow hover:shadow-amber-300 transition-all duration-700 hover:bg-blue-700 rounded-2xl p-1.5"
+                    onclick="loginAsStudent()">Student</button>
+                <button
+                    class=" border w-30 border-gray-500 bg-blue-600 shadow hover:shadow-amber-300 transition-all duration-700 hover:bg-blue-700 rounded-2xl p-1.5"
+                    onclick=" loginASFaculty()">Faculty</button>
+            </div>
+            <p class="mb-3 p-4   text-xs">New User? <span class="text-xl"><a href="registration.html">Register
+                        now</a></span></p>
+            <!-- <button onclick="login()"
+                class="bg-blue-500  font-bold text-center w-30  p-2 rounded-2xl  m-auto text-white border-white my-3 hover:bg-blue-600 hover:scale-105 shadow hover:shadow-blue-800 transition-all duration-100">LOGIN</button><br> -->
+            <h1 id="msg" class="text-xl my-5"></h1>
+        </div>
+    </div>
+    <script>
+        // function login() {
+        //     var uname, pwd;
+        //     var username = document.getElementById("uname").value;
+        //     var password = document.getElementById("pwd").value;
+        //     var h1Ele = document.getElementById("msg")
+        //     if (username == "") {
+        //         h1Ele.innerHTML = "Please fill the username";
+        //         return;
+        //     }
+        //     if (password == "") {
+        //         h1Ele.innerHTML = "Please fill the password";
+
+        //     }
+        //     else if (username == "usha" && password == "123") {
+        //         h1Ele.innerHTML = "Login successful";
+        //     }
+        //     else {
+        //         h1Ele.innerHTML = "Login failed";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

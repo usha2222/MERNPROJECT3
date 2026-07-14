@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tail.css">
+    <script src="q.js"></script>
+
+</head>
+
+<body class="bg-black text-white h-screen w-full text-center flex flex-col items-center my-60 text-2xl">
+    <!-- <div class="bg-black text-white h-screen w-full flex flex-col  items-center "> -->
+    <div
+        class=" border border-gray-800  shadow hover:shadow-amber-100 transition-all duration-1000 rounded-xl min-w-96 ">
+        <h1 class="text-3xl  m-2 ">Q. No.<span id="qno"></span>. <span id="que"></span></h1>
+        A. <input class="text-xl  " name="options" type="radio" onclick="check()" /> <span id="op1"></span><br />
+        B. <input class="text-xl  " name="options" type="radio" onclick="check()" /> <span id="op2"></span><br />
+        C. <input class="text-xl " name="options" type="radio" onclick="check()" /> <span id="op3"></span><br />
+        D. <input class="text-xl  " name="options" type="radio" onclick="check()" /> <span id="op4"></span><br />
+
+        <button
+            class="border p-1.5 my-7 rounded-xl w-30 me-8 bg-gray-800 border-gray-600 text-xl shadow hover:shadow-amber-200 transition-all duration-1000"
+            onclick="next()"> Next </button>
+        <button
+            class="border p-1.5 my-7 rounded-xl w-30 me-8  bg-gray-800 border-gray-600 text-xl shadow hover:shadow-amber-200 transition-all duration-1000"
+            onclick="submit()"> Submit </button>
+
+    </div>
+    <!-- </div> -->
+
+    <script>
+
+        var listOfQue = JSON.parse(localStorage.getItem("questions"))
+        var currentIndex = 0;
+        var score = 0;
+        setQuestion()
+        function setQuestion() {
+            var question = listOfQue[currentIndex]
+            document.getElementById("qno").innerHTML = currentIndex + 1
+            document.getElementById("que").innerHTML = question.quesion
+            document.getElementById("op1").innerHTML = question.a
+            document.getElementById("op2").innerHTML = question.b
+            document.getElementById("op3").innerHTML = question.c
+            document.getElementById("op4").innerHTML = question.d
+        }
+        function next() {
+            if (currentIndex < listOfQue.length) {
+                currentIndex++
+                setQuestion()
+            } else {
+                document.body.innerHTML = "<h1>" + "Your score is  " + score + "</h1>"
+                alert("no more questions and your Score is=" + score)
+            }
+
+
+        }
+        function submit() {
+
+            document.body.innerHTML = `<div style="font:larger;">Your Score is  ${score} </div>`
+        }
+        function check() {
+            var radioButtons = document.getElementsByName("options")
+            var op1Value = document.getElementById("op1").innerText
+            var op2Value = document.getElementById("op2").innerText
+            var op3Value = document.getElementById("op3").innerText
+            var op4Value = document.getElementById("op4").innerText
+            for (var i = 0; i < 4; i++) {
+                var button = radioButtons[i]
+                if (i == 0 && button.checked) {
+                    if (listOfQue[currentIndex].ans == op1Value) {
+                        score++
+                    }
+                }
+                if (i == 1 && button.checked) {
+                    if (listOfQue[currentIndex].ans == op2Value) {
+                        score++
+                    }
+                }
+                if (i == 2 && button.checked) {
+                    if (listOfQue[currentIndex].ans == op3Value) {
+                        score++
+                    }
+                }
+                if (i == 3 && button.checked) {
+                    if (listOfQue[currentIndex].ans == op4Value) {
+                        score++
+                    }
+                }
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

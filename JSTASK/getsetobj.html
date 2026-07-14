@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="username" id="uname">
+    <input type="password" placeholder="password" id="password">
+    <input type="text" placeholder="email" id="email">
+    <input type="text" placeholder="city" id="city">
+    <button onclick="saveUserData()">Save</button>
+    <br>
+    <button onclick="showStudentData()">Show Student Data</button>
+    <div id="userdata"></div>
+    <script>
+        var listofStudent = [];
+
+
+
+        function saveUserData() {
+            var uname = document.getElementById("uname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var city = document.getElementById("city").value;
+            var StudentObject = {
+                username: uname,
+                password: password,
+                email: email,
+                city: city
+            }
+            //push the object into the array
+            listofStudent.push(StudentObject);
+            localStorage.setItem("students", JSON.stringify(listofStudent))
+        }
+        function showStudentData() {
+            var datainstring = localStorage.getItem("students")
+            var listofStudent = JSON.parse(datainstring)
+            document.getElementById("userdata").innerHTML = listofStudent.map((student, i) =>
+              `<div style="box-shadow: 1px 1px 5px 1px gray;
+    padding: 20px;margin: 20px;">
+    <h1>Username:${student.username}</h1>
+    <h1>Password:${student.password}</h1>
+    <h1>Email:${student.email}</h1>
+    <h1>City:${student.city}</h1>
+        <button onclick="deleteStudent(${i})">Delete</button>
+</div>`
+            )
+
+        }
+        function deleteStudent(index) {
+            var modifiedList = listofStudent.splice(index, 1)
+            localStorage.setItem("students", JSON.stringify(listofStudent))
+            showStudentData();
+        }
+        //     function  saveUserData(){
+        //     var uname=document.getElementById("uname").value;
+        //     var password=document.getElementById("password").value;
+        //     var email=document.getElementById("email").value;
+        //     var city=document.getElementById("city").value;
+        //     var StudentObject={
+        //         username:uname,
+        //         password:password,
+        //         email:email,
+        //         city:city
+        //     }
+        //     localStorage.setItem("student",JSON.stringify(StudentObject))
+        // }
+        // function showStudentData(){
+        //  var datainstring=localStorage.getItem("student")
+        //  var student=JSON.parse(datainstring)
+        //  document.getElementById("userdata").innerHTML=`<h1>Username:${student.username}</h1>
+        //     <h1>Password:${student.password}</h1>
+        //     <h1>Email:${student.email}</h1>
+        //     <h1>City:${student.city}</h1>`
+        // }
+    </script>
+</body>
+
+</html>

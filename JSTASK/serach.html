@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Username Task</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tail.css">
+</head>
+
+<body>
+    <div class="bg-gray-950  w-full h-screen text-white flex justify-center items-center flex-col">
+        <h1 class="text-3xl font-bold p-6">DATA OF STUDENT BY NAME
+        </h1>
+        <input
+            class="p-2 bg-amber-50 m-4 rounded-xl w-80 text-black font-bold border-2 hover:border-amber-500 hover:scale-105"
+            type="text" placeholder="Search username" id="input" onkeyup="Data()">
+        <ul id="list" style="list-style: none;" class=" text-xl">
+
+        </ul>
+    </div>
+    <script>
+        var Studentnames = ["Mahi","Monu", "Raj", "Ashi", "Pratik", "Rani", "Raaj", "Aashi", "Manisha", "Usha", "Rajni", "Priti", "Sourabh"]
+        var list = document.getElementById("list");
+        setModifyData(Studentnames);
+        function Data() {
+            var input = document.getElementById("input").value.toLowerCase();
+            var modify = Studentnames.filter((v) => v.toLowerCase().startsWith(input))
+            setModifyData(modify);
+        }
+
+        function setModifyData(modified) {
+            list.innerHTML = modified.map((v) => "<li>" + v + "</li>" + "<hr>").join(" ")
+        }
+    </script>
+</body>
+
+</html>

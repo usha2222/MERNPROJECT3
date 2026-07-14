@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Output will be show in the console </h1>
+    <script>
+        var array = [12, 1, 2, 100, 30, 54, 55, 90, 85];
+        console.log("Before Sorting the Array ")
+        console.log(array)
+
+        var newarray = array.sort((a, b) => b - a);
+        console.log("After Sorting the Array")
+        console.log(newarray);
+        var [first, second, third] = newarray;
+        console.log("The three largest number is:")
+        console.log(first, second, third)
+        console.log("the first number is:" + first)
+        console.log("the second number is:" + second)
+        console.log("the third number is:" + third)
+
+
+    </script>
+</body>
+
+</html>

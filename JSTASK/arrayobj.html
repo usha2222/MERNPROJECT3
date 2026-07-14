@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <div class="max-h-full w-full bg-gray-900 text-white flex justify-center text-center flex-col">
+        <h1 class="text-4xl font-sans mt-20 p-6">DATA OF STUDENT BY DETAILS
+        </h1>
+        <input
+            class="p-2 bg-amber-50 my-2 m-auto rounded-xl w-96 text-black text-xl border-4 hover:border-gray-800 hover:scale-105"
+            type="text" placeholder="search here" name="uname" id="input" onkeyup="Data()">
+        <div class="p-7 text-pink-600 text-2xl font-bold">
+            <input class="me-2" type="radio" name="data" value="1" onclick="checkedValue(1)" checked>NAME
+            <input class="me-2" type="radio" name="data" value="2" onclick="checkedValue(2)">SURNAME
+            <input class="me-2" type="radio" name="data" value="3" onclick="checkedValue(3)">AGE
+            <input class="me-2" type="radio" name="data" value="4" onclick="checkedValue(4)">CITY
+        </div>
+
+        <ul id="list" style="list-style: none;"
+            class=" py-7 border-1 w-96 m-auto my-5 text-xl rounded-xl border-e-amber-50">
+
+        </ul>
+    </div>
+  
+    <script>
+        var studentsName = [
+            { name: "Sourabh", surname: "patel", age: 21, city: "indore" },
+            { name: "Manisha", surname: "solanki", age: 19, city: "khandwa" },
+            { name: "Raj", surname: "Sharma", age: 23, city: "pune" },
+            { name: "Rajni", surname: "verma", age: 19, city: "khandwa" },
+            { name: "Usha", surname: "patel", age: 19, city: "Khandwa" },
+            { name: "Priti", surname: "patel", age: 19, city: "khandwa" },
+            { name: "Ashi", surname: "mishra", age: 22, city: "kolkata" },
+            { name: "Mahi", surname: "patidar", age: 18, city: "borgoan" }];
+        var list = document.getElementById("list");
+        var check = 1;
+        setModifiedDatainList(studentsName);
+            function checkedValue(checkvalue){
+            check=checkvalue;
+            }
+        function Data() {
+            var input = document.getElementById("input").value.toLowerCase();
+
+            if (check == 1) {
+                return databyname(input);
+            }
+            if (check == 2) {
+                return databysurname(input);
+            }
+           
+            if (check == 3) {
+                return databyage(input);
+            }
+            if (check == 4) {
+                return daatbycity(input);
+            }
+            //var modifiedinput=studentsName.filter((studentname)=>studentname.name.toLowerCase().startsWith(input));
+            // setModifiedDatainList(modifiedinput);
+        }
+
+        function setModifiedDatainList(modified) {
+            list.innerHTML = modified.map((v) => 
+            `<li>
+               <h2>Name: ${v.name}</h2>
+             <h3>Surname: ${v.surname}</h3>
+                 <h4>Age: ${v.age}</h4>
+                <h5>City:${v.city} </h5>
+                 </li><hr>`)
+           .join(" ")
+
+        }
+        function databyname(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.name.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+
+        function databysurname(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.surname.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+
+        function daatbycity(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.city.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+
+
+        function databyage(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.age==(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<input type="text" placeholder="search" id="input">
+<ul id="list" style="list-style:none;">
+
+</ul>
+
+
+<body>
+    <script>
+let studentnames=["rahul","ram","syam","priya"];
+// let list=document.getElementById("input");
+// var modified=studentnames.filter((v)=>)
+// list.innerHTML=studentnames.map((v)=>"<li>"+v+"</li>")
+// Data()
+//  function Data(){
+//     list.inner=studentnames.map((v)=>"<li>" +v+ "</li>").toLowerCase();
+//  }
+
+
+
+
+// document.getElementById("list").innerHTML=array;
+//  for(var value of array){
+//             document.write(value);
+//          }
+
+
+        // var array1 = [12, 43, 22, 26, 1, 48, 554, 54, 322];
+        //var name1 = ["grapes", "apple", "mango", "banana"]
+        // for(var v of array1){
+        //     console.log(v);
+        // }
+        // console.log("original array")
+        // console.log(array1)
+
+        var array1 = [12, 43, 22, 26, 1, 48, 554, 54, 322];
+        console.log("filter out of even numbers")
+        var modifiyArr = array1.filter((v) => v % 2 == 0)
+        modifiyArr1 = modifiyArr.map((v) => `<li style='color:red'> ${v} </li>`)
+        // document.write(modifiyArr1)
+
+        // console.log(modifiyArr1.join(" & "))
+        document.write(modifiyArr1.join("  "))
+
+
+         var names=[ 1,4,3,4,88,90,54,32,50,32,30,33];
+         var modify=names.filter((v)=>v%3==0)
+         var modifyA=modify.map((v)=>"<li style='color:blue'>" +v+ "</li>")
+         document.write(modifyA.join(" "));
+    </script>
+</body>
+
+</htm

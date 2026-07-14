@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tail.css">
+    <script src="q.js"></script>
+</head>
+
+<body>
+    <div class="flex justify-center  text-center flex-col bg-black text-white h-screen w-full">
+        <div class="border flex justify-center mt-8 flex-col mx-auto rounded-xl px-6 border-gray-700 shadow hover:shadow-amber-100 transition-all duration-1000 ">
+            <h1 class="text-xl my-3 font-medium  ">Registration</h1>
+            <input class=" border   border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="text"
+                placeholder="Enter username" id="uname">
+            <input class=" border border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="password"
+                placeholder="Enter password" id="password">
+            <input class=" border border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="text"
+                placeholder="Enter branch" id="branch">
+            <input class=" border border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="text"
+                placeholder="Enter city" id="city">
+            <input class=" border border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="text"
+                placeholder="Enter mobile " id="mobile">
+            <input class=" border border-gray-600 m-3  p-1.5 rounded-xl w-96  " type="text"
+                placeholder="Enter email" id="email">
+            <div class="flex justify-center my-2">
+                <!-- <p></p>
+                <button>Student</button>
+                <button>Faculty</button> -->
+                <!-- <input type="radio" onclick="studentLogin()" value="register">Student
+                <input type="radio" value="register">Admin -->
+            </div>
+            <div class="flex justify-center my-4">
+
+            <button
+                class="font-medium border border-gray-500 bg-blue-600 shadow hover:shadow-amber-100 transition-all duration-700 hover:bg-blue-700 w-40 m-auto my-2  rounded-2xl p-2 text-xm"
+                onclick="userRegister()">Register as Student</button>
+                <button
+                class="font-medium border border-gray-500 bg-blue-600 shadow hover:shadow-amber-100 transition-all duration-700 hover:bg-blue-700 w-40 m-auto my-2  rounded-2xl p-2 text-xm"
+                onclick="facutlyRegistration()">Register as Faculty</button>
+        </div>
+        <p class="mb-3 p-2   text-xs">Already Have Register? <span class="text-xl"><a href="login.html">Login</a></span></p>
+    </div>
+        <!-- <button onclick="showStudentData()">show</button> -->
+        <div id="userdata"></div>
+        <h1 id="msg"></h1>
+        <div id="login" class="text-center flex justify-center rounded-xl mt-4 p-6 font-bold text-xl"></div>
+    </div>
+    <script>
+//         userListRegistration = []
+//         var h1 = document.getElementById("h1")
+
+//         function userRegister() {
+//             var uname = document.getElementById("uname").value;
+//             var password = document.getElementById("password").value
+//             var mobile = document.getElementById("mobile").value;
+//             var email = document.getElementById("email").value;
+//             var branch = document.getElementById("branch").value;
+//             var city = document.getElementById("city").value;
+//             var userObject = {
+//                 username: uname,
+//                 password: password,
+//                 mobile: mobile,
+//                 email: email,
+//                 city: city,
+//                 branch: branch
+//             }
+//             //push the object into the array
+//             userListRegistration.push(userObject);
+//             localStorage.setItem("register", JSON.stringify(userListRegistration))
+//             studentLogin();
+//             login();
+//         }
+//         function showStudentData() {
+//             var datainstring = localStorage.getItem("register")
+//             var userListRegistration = JSON.parse(datainstring)
+//             document.getElementById("userdata").innerHTML = userListRegistration.map((student, i) =>
+//                 `<div style="box-shadow: 1px 1px 5px 1px gray;
+//     padding: 20px;margin: 20px;">
+//     <h1>Username:${student.username}</h1>
+//     <h1>Password:${student.password}</h1>
+//     <h1>Branch${student.branch}</h1>
+//     <h1>Mobile:${student.mobile}</h1>
+//     <h1>Email:${student.email}</h1>
+//     <h1>City:${student.city}</h1>
+//         <button onclick="deleteStudent(${i})">Delete</button>
+// </div>`
+//             )
+
+//         }
+        
+//         function login() {
+//             var login = document.getElementById("login")
+//             login.innerHTML = `<div style="background-color: blue; color:white; align-item-center;
+//           height: 40px; text-align: center; width:  100px; border:1px solid gray;
+//           border:1px solid rgb(176, 134, 134); border-radius:20%;"><a href="login.html">login</a></div>`
+//         }
+    </script>
+</body>
+
+</html

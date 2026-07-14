@@ -1,0 +1,206 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="tail.css">
+</head>
+
+<body>
+    <div class="max-h-full w-full bg-gray-900 text-white flex justify-center text-center flex-col">
+        <h1 class="text-4xl mt-20 p-6">DATA OF STUDENT BY DETAILS
+        </h1>
+        <input
+            class="p-2 bg-amber-50 my-2 m-auto rounded-xl w-96 text-black text-xl border-4 hover:border-gray-800 hover:scale-105"
+            type="text" placeholder="search here" name="uname" id="input" onkeyup="Data()">
+        <div class="p-7 text-pink-600 text-2xl font-font">
+            <input class="me-2" type="radio" name="data" value="1" onclick="checkedValue(1)" checked>NAME
+            <input class="me-2" type="radio" name="data" value="2" onclick="checkedValue(2)">SURNAME
+            <input class="me-2" type="radio" name="data" value="3" onclick="checkedValue(3)">AGE
+            <input class="me-2" type="radio" name="data" value="4" onclick="checkedValue(4)">CITY
+        </div>
+
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>PORTFOLIO</h1>
+        </div>
+        <div>
+            <a href="index.html" target="_blank">HOME</a>
+            <a href="about.html" target="_blank">ABOUT</a>
+            <a href="project.html" target="_blank">PROJECT</a>
+            <a href="task.html" target="_blank">TASK</a>
+            <a href="contact.html" target="_blank">CONTACT</a>
+        </div>
+    </header>
+    <main class="maindiv">
+        <div class="section">
+            <h3><span class="span">HEELO!</span></h3>
+            <P>I'm <span class="span">Usha<br>Patel</span></P>
+            <p> a Frontend Developer</p>
+            <p>This is my official Portfolio website to showcase my all works related to Web development.</p>
+            <button>HIRE ME </button>
+        </div>
+        <div> <img  src="photo1.jpeg" alt="photo" class="image">
+        </div>
+    </main>
+</body>
+
+</html>
+        <ul id="list" style="list-style: none;"
+            class=" py-7 border-1 w-96 m-auto my-5 text-xl rounded-xl border-e-amber-50">
+
+        </ul>
+    </div>
+    <script>
+        <script>
+        var studentsName = [
+            { name: "Aakshara", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Bhumi", surname: "Sharma", age: 21, city: "Indore" },
+            { name: "Chavvi", surname: "talreja", age: 22, city: "Khargon" },
+            { name: "Diksha", surname: "parade", age: 26, city: "Khandwa" },
+            { name: "Epshita", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Fardin", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Gouri", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Harsh", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Irshad", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Jatin", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Komal", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Kajol", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Laksh", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Mona", surname: "Sharan", age: 20, city: "Indore" },
+            { name: "Manisha", surname: "solanki", age: 20, city: "Khandwa" }];
+        // "Bhumi","Chavvi","Diksha","Epshita","Fardin","Gouri","Harsh","Irshad","Jatin","Komal","Kajol","Laksh","Mona","Mahi","Nikita","Om","Pareniti","Rohan","Shruti","Tanu","Varun","Yash"];
+        var s = document.getElementById("list");
+        var check = 1;
+        setModifiedDatainList(studentsName);
+            function checkedValue(checkvalue){
+       check=checkvalue;
+            }
+        function modifiedArray() {
+            var input = document.getElementById('listofName').value.toLowerCase();
+
+            if (check == 1) {
+                return byname(input);
+            }
+            if (check == 2) {
+                return bysurname(input);
+            }
+            if (check == 3) {
+                return bycity(input);
+            }
+            if (check == 4) {
+                return byage(input);
+            }
+            return document.write("Not found.")
+            //var modifiedinput=studentsName.filter((studentname)=>studentname.name.toLowerCase().startsWith(input));
+            // setModifiedDatainList(modifiedinput);
+        }
+
+        function setModifiedDatainList(modified) {
+            s.innerHTML = modified.map((v) => "<li> <h2>Name: " + v.name + "</h2>" +
+                "<h3>Surname:" + v.surname + "</h3>" +
+                "<h4>Age" + v.age + "</h4>" +
+                "<h5>City:" + v.city + "</h5> </li>"
+
+            ).join("")
+
+        }
+        function byname(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.name.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+
+        function bysurname(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.surname.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+
+        function bycity(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.city.toLowerCase().startsWith(input1));
+            setModifiedDatainList(modifiedinput);}
+
+
+        function byage(input1) {
+            var modifiedinput = studentsName.filter((studentname) => studentname.age==(input1));
+            setModifiedDatainList(modifiedinput);
+        }
+    </script>
+        // var Studentnames = [
+        //     { name: "Mahi", surname: "patel", age: 12, city: "delhi" },
+        //     { name: "Raj", surname: "shukla", age: 16, city: "pune" },
+        //     { name: "Rani", surname: "sharma", age: 18, city: "nepa" },
+        //     { name: "Ashi", surname: "patidar", age: 32, city: "indore" },
+        //     { name: "Manisha", surname: "solanki", age: 19, city: "khandwa" },
+        //     { name: "Usha", surname: "patel", age: 19, city: "khandwa" },
+        //     { name: "Rajni", surname: "verma", age: 19, city: "khnadwa" },
+        //     { name: "Priti", surname: "patel", age: 19, city: "khandwa" },
+        // ]
+        // var list = document.getElementById('list');
+        // var check = 1;
+
+        // setModifyData(Studentnames);
+        // function checkedValue(checkvalue){
+        //     check=checkvalue;
+        // }
+
+        // function Data() {
+        //     var input = document.getElementById('input').value.toLowerCase();
+
+        //     if (check == 1) {
+        //         return databyname(input);
+        //     }
+        //     if (check == 2) {
+        //         return databysurname(input);
+        //     } if (check == 3) {
+        //         return databyage(input);
+        //     } if (check == 4) {
+        //         return databycity(input);
+        //     }
+        //     // var modify = Studentnames.filter((v) => v.name.toLowerCase().startsWith(input))
+        //     // setModifyData(modify);
+        // }
+    
+
+        // function setModifyData(modified) {
+        //     list.innerHTML = modified.map((v) =>
+        //  `<li>
+        //         <h2>Name: ${v.name}</h2>
+        //          <h3>Surname: ${v.surname}</h3>
+        //          <h4>Age: ${v.age}</h4>
+        //          <h5>City:${v.city} </h5>
+        //          </li><hr>`)
+        //         .join(" ")
+        // }
+        // function databyname(inputData) {
+        //     var modify = Studentnames.filter((v) => v.name.toLowerCase().startsWith(inputData))
+        //     setModifyData(modify);
+        // }
+        // function databysurname(inputData) {
+        //     var modify = Studentnames.filter((v) => v.surnamename.toLowerCase().startsWith(inputData))
+        //     setModifyData(modify);
+        // }
+        // function databyage(inputData) {
+        //     var modify = Studentnames.filter((v) => v.age.toLower == (inputData))
+        //     setModifyData(modify);
+        // }
+        // function databycity(inputData) {
+        //     var modify = Studentnames.filter((v) => v.city.toLowerCase().startsWith(inputData))
+        //     setModifyData(modify);
+        // }
+    </script>
+</body>
+
+</html> -->

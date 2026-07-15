@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic color changer</title>
+    <style>
+        .title{
+            font-weight: bold;
+            font-style: italic;
+            padding: 10px;
+            text-align: center;
+        }
+        button{
+            padding:7px 15px;
+            align-items: center;
+            border-radius: 12px;
+            border: none;
+            height: 55px;
+            text-align: center;
+            background-color: rgb(196, 196, 211);
+            cursor: pointer;
+            margin: 3px;
+            font-weight: bold;
+            font-size: 10px;
+            font-style: normal;
+            align-items: center;
+            overflow: hidden;
+            width: 190px;
+            box-shadow: 1px 2px 1px rgb(43, 41, 41);
+            
+        }
+
+        button:hover{
+                        transform: scale(1.04);
+
+        }
+        .flex{
+            display: flex ;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Dynamic Color Changer</h1>
+    <div class="flex ">
+    <button class="btn-1">Change Background</button>
+    <button class="btn-2">Change Color </button>
+    <button class="btn-4">Change font-family and size</button>
+
+    <button class="btn-3">Reset</button>
+</div>
+    <script src="dynamicColor.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        header{
+            background-color: rgb(105, 9, 183);
+            color: white;
+            width: 100%;
+            padding: 3px 6px;
+            text-align: center;
+        }
+        .subtitle{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 30px;
+        }
+        .posts-container{
+            max-width: 100vw;
+            height: 100vh;
+         display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 10px;
+
+            
+        }
+       
+        .post-card{
+            border:1px solid rgb(209, 199, 199);
+            padding:  10px 25px;
+            border-radius: 5px;
+            box-shadow: 1px 2px 4px gray;
+        }
+        .post-title{
+            font-size: 22px;
+            font-style: italic;
+            font-weight: bold
+        }
+        .post-body{
+            font-size: 16px;
+        }
+        .error-message{
+            color: red;
+            font-size: 20px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        
+        }
+        @media (max-width:900px) {
+            .posts-container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width:600px) {
+            .posts-container{
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Awesome Posts</h1>
+        <p>Discover amazing content from around the world</p>
+    </header>
+    <div class="posts-container">
+        <div class="subtitle">Loading......</div>
+    </div>
+
+    <script src="post.js"></script>
+</body>
+</html>

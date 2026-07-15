@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            font-size: 35px;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 70px;
+        }
+
+        span {
+            background: linear-gradient(to right, #667eea, rgb(186, 19, 47), #a7041f);
+            background-clip: transparent;
+            -webkit-background-clip: text;
+            
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is demo of auto typing</h1>
+    <div class="container">
+        <h1>I am a <span class="auto-type"></span></h1>
+    </div>
+   
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="typing.js"></script>
+</body>
+
+</html>
